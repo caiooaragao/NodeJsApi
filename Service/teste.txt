@@ -1,0 +1,66 @@
+import { Document } from 'mongoose';
+import { vinhoInfoModel } from '../Models/VinhoInfoModel';
+
+// Interface for the vinho document
+
+interface IVinhoInfo{
+
+}
+// Service class for the vinho collection
+class VinhoService {
+  // Create a new vinho document
+  public async createVinho(vinhoData: IVinhoInfo): Promise<IVinhoDocument> {
+    try {
+      const createdVinho = await vinhoInfoModel.create(vinhoData);
+      return createdVinho;
+    } catch (error) {
+      // Handle any error that occurred during creation
+      throw new Error('Failed to create vinho');
+    }
+  }
+
+  // Get all vinho documents
+  public async getAllVinhos(): Promise<IVinhoDocument[]> {
+    try {
+      const allVinhos = await vinhoInfoModel.find();
+      return allVinhos;
+    } catch (error) {
+      // Handle any error that occurred during retrieval
+      throw new Error('Failed to get all vinhos');
+    }
+  }
+
+  // Get a specific vinho document by its ID
+  public async getVinhoById(vinhoId: string): Promise<IVinhoDocument | null> {
+    try {
+      const vinho = await vinhoInfoModel.findById(vinhoId);
+      return vinho;
+    } catch (error) {
+      // Handle any error that occurred during retrieval
+      throw new Error('Failed to get vinho by ID');
+    }
+  }
+
+  // Update a specific vinho document by its ID
+  public async updateVinhoById(vinhoId: string, vinhoData: IVinhoInfo): Promise<IVinhoDocument | null> {
+    try {
+      const updatedVinho = await vinhoInfoModel.findByIdAndUpdate(vinhoId, vinhoData, { new: true });
+      return updatedVinho;
+    } catch (error) {
+      // Handle any error that occurred during update
+      throw new Error('Failed to update vinho by ID');
+    }
+  }
+
+  // Delete a specific vinho document by its ID
+  public async deleteVinhoById(vinhoId: string): Promise<void> {
+    try {
+      await vinhoInfoModel.findByIdAndDelete(vinhoId);
+    } catch (error) {
+      // Handle any error that occurred during deletion
+      throw new Error('Failed to delete vinho by ID');
+    }
+  }
+}
+
+export default VinhoService;
