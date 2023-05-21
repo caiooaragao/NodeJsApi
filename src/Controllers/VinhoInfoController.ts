@@ -1,5 +1,5 @@
 
-import {vinhoInfoService} from "../Service/VinhoInfoService"
+import {vinhoInfoService} from "../Service/VinhoInfoService.js"
 
 
  const VinhoInfoController = {
@@ -26,6 +26,7 @@ import {vinhoInfoService} from "../Service/VinhoInfoService"
         }
     }
 
-};
+}
 
-module.exports = VinhoInfoController;
+
+export  {VinhoInfoController}

@@ -1,10 +1,10 @@
-/* import express from 'express' */
+const express = require('./express')
 
- const vinhoInfoController = require('../Controllers/VinhoInfoController')
+/* const vinhoInfoController = require('../Controllers/VinhoInfoController')
 
+ */ 
 
-
-/* import { vinhoInfoController } from '../Controllers/VinhoInfoController' */
+import { vinhoInfoController } from '../Controllers/VinhoInfoController'
 
 const router = express.Router()
 
@@ -15,5 +15,5 @@ router.route('/vinhoinfo').post((req,res) => vinhoInfoController.criarVinhoInfo(
 router.route('/vinhoinfo').get((req, res)=> vinhoInfoController.listarTodosVinhoInfo(req) )
 
 
-module.exports = router
+export {router}
 

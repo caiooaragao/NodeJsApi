@@ -2,19 +2,26 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "build": "tsc",
+    "dev": "nodemon index.ts",
+    "start": "node index",
+    "dev:server": "nodemon --watch './**/*.ts' --exec 'ts-node' server.ts"
+   
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.2.2",
+    "typescript": "^5.0.4"
+  },
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.1.1",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.22",
-    "ts-node": "^10.9.1"
+    "mongoose": "^7.2.0",
+    "nodemon": "^2.0.22"
   }
 }

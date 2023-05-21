@@ -1,4 +1,4 @@
-import {vinhoInfoModel} from "../Models/VinhoInfoModel"
+import {vinhoInfoModel} from "../Models/VinhoInfoModel.js"
 
 const VinhoInfoRepository = {
     async criarVinhoInfo(req:any){

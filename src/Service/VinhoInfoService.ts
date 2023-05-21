@@ -1,4 +1,4 @@
-import {VinhoInfoRepository} from "../Repository/VinhoInfoRepository"
+import {VinhoInfoRepository} from "../Repository/VinhoInfoRepository.js"
 
 
 
