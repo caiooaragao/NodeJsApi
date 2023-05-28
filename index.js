@@ -1,8 +1,4 @@
-import { app } from "./app"
-
-console.log('server online')
-app.listen(3333)
-/* import {VinhoInfoController} from "./Controllers/VinhoInfoController.js"
+const VinhoInfoController = require('./src/Controllers/VinhoInfoController')
 const express = require('./express')
 const router = express.Router()
 
@@ -34,4 +30,4 @@ const routes = require('./Routes/routes')
 app.use('/api', routes)
  
 
-console.log('hello world') */
+console.log('hello world')
