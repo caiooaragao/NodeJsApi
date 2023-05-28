@@ -1,5 +1,5 @@
 
-import {vinhoInfoService} from "../Service/VinhoInfoService.js"
+import {vinhoInfoService} from "../Service/VinhoInfoService"
 
 
  const VinhoInfoController = {

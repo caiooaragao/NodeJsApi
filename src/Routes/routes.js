@@ -14,6 +14,3 @@ const router = express.Router()
 router.route('/vinhoinfo').post((req,res) => vinhoInfoController.criarVinhoInfo(req,res))
 router.route('/vinhoinfo').get((req, res)=> vinhoInfoController.listarTodosVinhoInfo(req) )
 
-
-export {router}
-

@@ -1,4 +1,4 @@
-import {vinhoInfoModel} from "../Models/VinhoInfoModel.js"
+import {vinhoInfoModel} from "../Models/VinhoInfoModel"
 
 const VinhoInfoRepository = {
     async criarVinhoInfo(req:any){
@@ -20,11 +20,13 @@ const VinhoInfoRepository = {
     async listarTodosVinhoInfo(){
         try {
             const response = vinhoInfoModel.find()
-            return response
             console.log('vinho infos pesquisados')
+            return response
+            
         } catch (error) {
-            return error
             console.log(error)
+            return error
+            
         }
     },
 
